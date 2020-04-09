@@ -242,6 +242,29 @@ void travelList(linkList list){
     }
 }
 
+
+int mainElement(int *a,int n){
+    
+    
+    int count = 1;
+    int key = a[0];
+    for (int i =1; i<n; i++) {
+        if (key == a[i]) {
+            count++;
+        }else{
+            
+            if (count>0) {
+                count--;
+            }else{
+                key = a[i];
+                count = 1;
+            }
+            
+        }
+    }
+    return -1;
+}
+
 int main(int argc, const char * argv[]) {
     // insert code here...
     printf("Hello, World!\n");
@@ -262,22 +285,22 @@ int main(int argc, const char * argv[]) {
 
 //    travelList(list);
     
-    linkList list1;
-    InitNodeLinkList(&list1);
-    InsertDataAndSorted(&list1, 6);
-     InsertDataAndSorted(&list1, 3);
-     InsertDataAndSorted(&list1, 8);
-    InsertDataAndSorted(&list1, 10);
-    InsertDataAndSorted(&list1, 10);
-    
-    
-    linkList list2;
-    InitNodeLinkList(&list2);
-     InsertDataAndSorted(&list2, 6);
-     InsertDataAndSorted(&list2, 7);
-     InsertDataAndSorted(&list2, 5);
-     InsertDataAndSorted(&list2, 10);
-     InsertDataAndSorted(&list2, 10);
+//    linkList list1;
+//    InitNodeLinkList(&list1);
+//    InsertDataAndSorted(&list1, 6);
+//     InsertDataAndSorted(&list1, 3);
+//     InsertDataAndSorted(&list1, 8);
+//    InsertDataAndSorted(&list1, 10);
+//    InsertDataAndSorted(&list1, 10);
+//
+//
+//    linkList list2;
+//    InitNodeLinkList(&list2);
+//     InsertDataAndSorted(&list2, 6);
+//     InsertDataAndSorted(&list2, 7);
+//     InsertDataAndSorted(&list2, 5);
+//     InsertDataAndSorted(&list2, 10);
+//     InsertDataAndSorted(&list2, 10);
   
     // 方法一 开辟新空间
 //    combinListAndSorted(&list1, &list2);
@@ -285,15 +308,18 @@ int main(int argc, const char * argv[]) {
     
    
     //方法二 不开辟新空间
-    combinList(&list1, &list2);//拼接
+//    combinList(&list1, &list2);//拼接
+//
+//    sortedList(&list1);
+//    DuplicateRemoval(&list1);
+//
+//    travelList(list1);
     
-    sortedList(&list1);
-    DuplicateRemoval(&list1);
-    
-    travelList(list1);
     
     
+    int a[] = {0,5,5,3,1,7,5,5,2,5,5};
     
+    mainElement(a, 8);
     
     return 0;
     
